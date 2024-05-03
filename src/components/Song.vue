@@ -1,15 +1,14 @@
 <template>
-  <div class="card song-card-horizontal mb-3">
+  <div class="card song-card mb-3">
     <div class="row g-0">
-      <div class="col-md-4 song-cover-image">
-        <img class="img-fluid rounded-start " alt="Song cover image"
-             src="https://static.vecteezy.com/system/resources/previews/005/337/799/original/icon-image-not-found-free-vector.jpg">
+      <div class="col-md-4 song-cover">
+        <img class="img-fluid" :src="coverImage" alt="Song cover image">
       </div>
       <div class="col-md-8">
         <div class="card-body">
-          <h5 class="card-title text-dark text-start">{{ title }}</h5>
-          <p class="card-text text-dark text-start mb-0"><em>{{ artist }}</em></p>
-          <p class="card-text text-dark text-start">{{ duration }}</p>
+          <h5 class="card-title">{{ title }}</h5>
+          <p class="card-text mb-0"><em>{{ artist }}</em></p>
+          <p class="card-text">{{ duration }}</p>
         </div>
       </div>
     </div>
@@ -31,6 +30,10 @@ export default {
     duration: {
       type: String,
       required: true
+    },
+    coverImage: {
+      type: String,
+      required: true
     }
   }
 }
@@ -38,18 +41,31 @@ export default {
 
 <style scoped>
 
-.song-card-horizontal {
-  max-height: 110px;
+.song-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-.song-cover-image {
-  max-height: 110px;
-  max-width: 109px;
+.song-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .card-body {
-  display: flex;
-  flex-direction: column;
+  padding: 1rem;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  color: #181818;
+  margin-bottom: 0.5rem;
+}
+
+.card-text {
+  color: #666;
 }
 
 </style>
