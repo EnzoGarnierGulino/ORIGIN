@@ -1,29 +1,5 @@
-# ORIGIN
+# ORIGIN Records website
 
-This template should help get you started developing with Vue 3 in Vite.
+Developed with Vue.js and Boostrap 5
 
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+[![Netlify Status](https://api.netlify.com/api/v1/badges/89fa201e-e8ef-4771-8114-2c2c674ff3b7/deploy-status)](https://app.netlify.com/sites/origin-records/deploys)
