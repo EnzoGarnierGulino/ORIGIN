@@ -1,43 +1,115 @@
 <template>
   <div class="song-list">
-    <div class="form-outline mb-3" data-mdb-input-init>
-      <input type="search" id="form1" class="form-control" placeholder="Search for something here !" aria-label="Search"
-      v-model="searchQuery"/>
+    <div v-if="songsData.length > 0">
+      <Song v-for="song in songsData" :key="song.track.id" :duration="song.track.duration_ms"
+            :name="song.track.name" :artists="song.track.artists" :coverart="song.track.album.images[0].url"
+      ></Song>
     </div>
-    <Song :title="song.title" :artist="song.artist" :duration="song.duration" :cover-image="song.coverImage"
-          v-for="song in filteredSongs" :key="song.id" />
+    <div v-else class="loading-container">
+      <div class="loading-spinner"></div>
+    </div>
   </div>
 </template>
 
 <script>
+import axios from 'axios';
 import Song from "@/components/Song.vue";
 
 export default {
   name: 'SongList',
-  components: {Song },
-  props: {
-    songs: {
-      type: Array,
-      required: true
-    }
-  },
+  components: { Song },
   data() {
     return {
-      songs: [
-        {id: 1, title: 'Explorers', artist: 'Azix09 & ImLimaah', duration: '3:45', coverImage: "https://i1.sndcdn.com/avatars-VKbSYyYcaXWvO2et-aOvzhg-t240x240.jpg"},
-        {id: 2, title: 'Shine', artist: 'GWN & Mijinko', duration: '4:15', coverImage: "https://i1.sndcdn.com/avatars-VKbSYyYcaXWvO2et-aOvzhg-t240x240.jpg"},
-        {id: 3, title: 'Sunrise Serenade', artist: 'Manila ChriZ', duration: '2:30', coverImage: "https://i1.sndcdn.com/avatars-VKbSYyYcaXWvO2et-aOvzhg-t240x240.jpg"}
-      ],
+      token: null,
+      songsData: [],
       searchQuery: ''
-    };
+    }
   },
-  computed: {
-    filteredSongs() {
-      const query = this.searchQuery.toLowerCase();
-      return this.songs.filter(song =>
-          song.title.toLowerCase().includes(query) || song.artist.toLowerCase().includes(query)
-      );
+  mounted() {
+    if (!localStorage.getItem('spotifyToken') || !localStorage.getItem('tokenCreationTime')) {
+      this.getAccessToken();
+    } else {
+      this.token = localStorage.getItem('spotifyToken');
+      const tokenCreationTime = localStorage.getItem('tokenCreationTime');
+      const currentTime = new Date().getTime() / 1000;
+      if (currentTime - tokenCreationTime > 3600) {
+        this.getAccessToken();
+      } else {
+        this.getSongs();
+      }
+    }
+  },
+  methods: {
+    getAccessToken() {
+      const clientId = process.env.CLIENT_ID;
+      const clientSecret = process.env.CLIENT_SECRET;
+      const authString = `${clientId}:${clientSecret}`;
+      const encodedAuthString = btoa(authString);
+
+      axios.post('https://accounts.spotify.com/api/token', {
+        grant_type: 'client_credentials'
+      }, {
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+          'Authorization': `Basic ${encodedAuthString}`
+        }
+      })
+          .then(response => {
+            this.token = response.data.access_token;
+            localStorage.setItem('spotifyToken', this.token);
+            this.getSongs();
+          })
+          .catch(error => {
+            console.error(error);
+          });
+    },
+
+    getSongs() {
+      const endpoint = 'https://api.spotify.com/v1/playlists/6gxr6s1C9YImDsoJgiVGxC/tracks';
+
+      axios.get(endpoint, {
+        params: {
+          fields: 'items(track(id, name, artists(name), album(images(url)), duration_ms))'
+        },
+        headers: {
+          'Authorization': `Bearer ${this.token}`,
+          'Content-Type': 'application/json'
+        }
+      })
+          .then(response => {
+            this.songsData = response.data.items;
+            console.log(this.songsData)
+          })
+          .catch(error => {
+            console.error(error);
+          });
     }
   }
 }
 </script>
+
+<style>
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-spinner {
+  border: 4px solid #ccc;
+  border-top: 4px solid #181818;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+</style>
