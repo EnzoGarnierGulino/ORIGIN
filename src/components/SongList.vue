@@ -41,8 +41,8 @@ export default {
   },
   methods: {
     getAccessToken() {
-      const clientId = process.env.CLIENT_ID;
-      const clientSecret = process.env.CLIENT_SECRET;
+      let clientId = import.meta.env.VITE_SPOTIFY_API_CLIENT_ID;
+      let clientSecret = import.meta.env.VITE_SPOTIFY_API_CLIENT_SECRET;
       const authString = `${clientId}:${clientSecret}`;
       const encodedAuthString = btoa(authString);
 
