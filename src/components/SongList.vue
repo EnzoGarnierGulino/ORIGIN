@@ -1,9 +1,9 @@
 <template>
-  <div class="song-list">
-    <div v-if="songsData.length > 0">
+  <div class="song-list" style="display: flex; justify-content: center;">
+    <div v-if="songsData.length > 0" class="cards-container">
       <Song v-for="song in songsData" :key="song.track.id" :duration="song.track.duration_ms"
-            :name="song.track.name" :artists="song.track.artists" :coverart="song.track.album.images[0].url"
-      ></Song>
+            :name="song.track.name" :artists="song.track.artists" :coverart="song.track.album.images[0].url">
+      </Song>
     </div>
     <div v-else class="loading-container">
       <div class="loading-spinner"></div>
@@ -89,6 +89,12 @@ export default {
 </script>
 
 <style>
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .loading-container {
   display: flex;
   justify-content: center;
