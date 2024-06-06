@@ -41,8 +41,8 @@ export default {
 <style scoped>
 .song-card {
   display: inline-block;
-  margin: 10px;
-  width: 350px;
+  margin: 20px;
+  width: 300px;
   background-color: #434343;
   border: 1px solid #ddd;
   border-radius: 10px;

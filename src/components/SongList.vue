@@ -6,7 +6,8 @@
         </InfoLabel>
         <div v-if="filteredSongs.length > 0">
             <Song v-for="song in filteredSongs" :key="song.track.id" :duration="song.track.duration_ms"
-                  :name="song.track.name" :artists="song.track.artists" :coverart="song.track.album.images[0].url"></Song>
+                  :name="song.track.name" :artists="song.track.artists" :coverart="song.track.album.images[0].url">
+            </Song>
         </div>
         <div v-else class="loading-container">
             <div class="loading-spinner"></div>
