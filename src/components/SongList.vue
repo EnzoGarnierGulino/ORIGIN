@@ -49,8 +49,8 @@
                 }
             },
             getAccessToken() {
-                let clientId = "d1d9de4848224f658c4c60c52724456a";
-                let clientSecret = "57a178e09ba1495198719aabb20a8299";
+              let clientId = import.meta.env.VITE_SPOTIFY_API_CLIENT_ID;
+              let clientSecret = import.meta.env.VITE_SPOTIFY_API_CLIENT_SECRET;
                 const authString = `${clientId}:${clientSecret}`;
                 const encodedAuthString = btoa(authString);
 
