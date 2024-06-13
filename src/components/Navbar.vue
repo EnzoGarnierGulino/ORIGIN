@@ -38,7 +38,7 @@
             </ul>
         </div>
     </nav>
-    <h2>👉 Free ORIGIN song downloads <a href="https://mega.nz/folder/0RJhyQiA#3Tbdyxb19gPF2VlWXzijfg" target="_blank">HERE!</a> 👈</h2>
+    <h2>👉 Free ORIGIN song downloads <a href="https://mega.nz/folder/0RJhyQiA#3Tbdyxb19gPF2VlWXzijfg" target="_blank">HERE!</a> 👈</h2><br />
 </template>
 
 <script>
