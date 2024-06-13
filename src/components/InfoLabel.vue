@@ -1,14 +1,14 @@
 <template>
     <div class="label">
         <p>ORIGIN Records songs are also avariable here: </p>
-        <img class="socialmediabutton" src="https://1000logos.net/wp-content/uploads/2017/05/New-YouTube-logo.jpg"
-             alt="ORIGIN Records Youtube!"
+        <img class="socialmediabutton" src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png"
+             alt="ORIGIN Records YouTube"
              @click="redirect"> 
-        <img class="socialmediabutton" src="https://th.bing.com/th/id/R.24223c92569a035c382c2b658e9789a0?rik=SsJgrmXtdiNaEw&pid=ImgRaw&r=0"
-             alt="ORIGIN Records Instagram!"
+        <img class="socialmediabutton" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png"
+             alt="ORIGIN Records Instagram"
              @click="redirect2">
-        <img class="socialmediabutton" src="https://www.freepnglogos.com/uploads/spotify-logo-png/image-gallery-spotify-logo-21.png"
-             alt="ORIGIN Records Spotify Playlist!"
+        <img class="socialmediabutton" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/640px-Spotify_logo_without_text.svg.png"
+             alt="ORIGIN Records Spotify playlist"
              @click="redirect3">
 
 
@@ -112,7 +112,6 @@
         margin: 0 10px;
         animation: ease-in;
         cursor: pointer;
-        width: 70px;
         height: 70px;
     }
 
