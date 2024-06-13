@@ -18,25 +18,25 @@
         ORIGIN Records can review your demo music and release it after in their Discord Server. We also have lots of social media where we actually do it! Click the buttons below to open all of our socials!💾
     </p>
 
-    <a :href="'https://www.instagram.com/origin.records/'" target="_blank">
-        <img class="socialmediabutton" src="https://th.bing.com/th/id/R.24223c92569a035c382c2b658e9789a0?rik=SsJgrmXtdiNaEw&pid=ImgRaw&r=0"
-             alt="ORIGIN Records Instagram!" />
+    <a href="'https://www.instagram.com/origin.records/'" target="_blank">
+        <img class="socialmediabutton" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png"
+             alt="ORIGIN Records Instagram" />
     </a>
-    <a :href="'https://www.youtube.com/@origin_records'" target="_blank">
-        <img class="socialmediabutton" src="https://1000logos.net/wp-content/uploads/2017/05/New-YouTube-logo.jpg"
-             alt="ORIGIN Records Youtube!" />
+    <a href="'https://www.youtube.com/@origin_records'" target="_blank">
+        <img class="socialmediabutton" src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png"
+             alt="ORIGIN Records YouTube" />
     </a>
-    <a :href="'https://open.spotify.com/playlist/6gxr6s1C9YImDsoJgiVGxC'" target="_blank">
-        <img class="socialmediabutton" src="https://www.freepnglogos.com/uploads/spotify-logo-png/image-gallery-spotify-logo-21.png"
-             alt="ORIGIN Records Spotify Playlist!" />
+    <a href="https://open.spotify.com/user/31ell3kuuy2t2bmq4n3avromj6ua" target="_blank">
+        <img class="socialmediabutton" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/640px-Spotify_logo_without_text.svg.png"
+             alt="ORIGIN Records Spotify" />
     </a>
-    <a :href="'soundcloud.com/origin_records'" target="_blank">
-        <img class="socialmediabutton" src="../assets/SoundCloud.jpg"
-             alt="ORIGIN Records SoundCloud!" />
+    <a href="'soundcloud.com/origin_records'" target="_blank">
+        <img class="socialmediabutton" src="https://a-v2.sndcdn.com/assets/images/sc-icons/ios-a62dfc8fe7.png"
+             alt="ORIGIN Records SoundCloud" />
     </a>
-    <a :href="'discord.gg/uVUKUnq3vm'" target="_blank">
-        <img class="socialmediabutton" src="https://th.bing.com/th/id/OIP.EZkdm25nbQDs_PjFN8hmewAAAA?rs=1&pid=ImgDetMain"
-             alt="ORIGIN Records Official Discord Server!" />
+    <a href="https://discord.gg/VGA5vVmPTE" target="_blank">
+        <img class="socialmediabutton" src="../assets/discord-mark-white.svg"
+             alt="ORIGIN Records Discord server" />
     </a>
     <br />
     <br />
@@ -77,14 +77,11 @@
         ▹We only want to see FINISHED songs. We wont wait another 5 demos with improvements that you send...
         <br />
         <br />
-        You can join our discord to submit here:
-
-        <br />
-    </p>
-    <a :href="'discord.gg/uVUKUnq3vm'" target="_blank">
-        <img class="socialmediabutton" src="https://th.bing.com/th/id/OIP.EZkdm25nbQDs_PjFN8hmewAAAA?rs=1&pid=ImgDetMain"
-             alt="ORIGIN Records Official Discord Server!" />
+        You can join our discord to submit here: <a href="https://discord.gg/VGA5vVmPTE" target="_blank">
+        <img class="socialmediabutton" src="../assets/discord-mark-white.svg"
+             alt="ORIGIN Records Discord server" />
     </a>
+    </p>
     <br />
     <p class="paragraphtext">HAPPY SUBMITTING!</p>
     <h1 style="font-family: Arial; text-shadow: inherit 5px; font-weight: bold; text-align: left">Are there any limits to genres submitted to the label?</h1>
