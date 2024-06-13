@@ -101,13 +101,9 @@ export default {
 </script>
 
 <style scoped>
-
-
-
     .aboutpage {
         font-family: Arial, sans-serif, Bell MT;
     }
-
 
     .header {
         border: dotted 6px;
@@ -126,8 +122,8 @@ export default {
     }
 
     .header h1 {
-            margin: 0;
-            font-size: 2.5em;
+        margin: 0;
+        font-size: 2.5em;
     }
 
     .classicheader {
@@ -149,17 +145,15 @@ export default {
         animation: ease-in 0.5s;
     }
 
-        .paragraphtext:hover {
-            text-shadow: none;
-            -webkit-background-clip: border-box;
-        }
-
+    .paragraphtext:hover {
+        text-shadow: none;
+        -webkit-background-clip: border-box;
+    }
 
     .socialmediabutton {
         margin: 0 10px;
         animation: ease-in;
         cursor: pointer;
-        width: 70px;
         height: 70px;
     }
 
