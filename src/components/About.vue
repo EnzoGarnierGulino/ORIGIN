@@ -144,7 +144,7 @@ export default {
     .paragraphtext {
         font-family: 'Arial';
         font-size: 2em;
-        color: #000000;
+        color: white;
         text-shadow: 2px 2px 4px rgba(0, 2, 5, 0.3);
         display: inline-block;
         margin: 17px;
